@@ -1,6 +1,22 @@
 <mat-toolbar color="primary">
-  <mat-icon>menu</mat-icon>
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
 </mat-toolbar>
 <mat-sidenav-container>
-  <router-outlet></router-outlet>
+  <mat-sidenav mode="side" #drawer>
+    <button mat-menu-item>{{'APP.SIDEBAR.HOME'|translate}}</button>
+    <button mat-menu-item>{{'APP.SIDEBAR.ABOUT'|translate}}</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="setLang('en-us')">English</button>
+  <button mat-menu-item (click)="setLang('de-de')">Deutch</button>
+</mat-menu>
