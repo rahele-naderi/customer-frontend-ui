@@ -5,3 +5,7 @@ mat-sidenav-container {
 .spacer {
     flex: 1;
 }
+
+mat-sidenav {
+    min-width: 200px;
+}

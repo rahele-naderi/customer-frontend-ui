@@ -9,8 +9,9 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav mode="side" #drawer>
-    <button mat-menu-item>{{'APP.SIDEBAR.HOME'|translate}}</button>
-    <button mat-menu-item>{{'APP.SIDEBAR.ABOUT'|translate}}</button>
+    <button *ngFor="let item of menuItems" (click)="itemClick(item.url, drawer)" mat-menu-item>
+      {{ item.title | translate }}
+    </button>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
