@@ -1,0 +1,17 @@
+mat-sidenav-container {
+    flex: 1;
+}
+
+.spacer {
+    flex: 1;
+}
+
+mat-sidenav {
+    min-width: 200px;
+}
+
+:host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

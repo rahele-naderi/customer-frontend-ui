@@ -5,14 +5,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ContainerComponent } from './container/container.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+export const componets = [ContainerComponent]
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...componets,
+  ],
   imports: [
     CommonModule,
     ...materialModules,
@@ -32,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     ...materialModules,
     BrowserAnimationsModule,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
+    ...componets,
   ]
 })
 export class SharedModule { }
