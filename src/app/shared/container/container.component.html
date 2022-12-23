@@ -8,7 +8,7 @@
     </button>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav mode="side" #drawer>
+    <mat-sidenav mode="over" #drawer>
         <button *ngFor="let item of menuItems" (click)="itemClick(item.url, drawer)" mat-menu-item>
             {{ item.title | translate }}
         </button>
