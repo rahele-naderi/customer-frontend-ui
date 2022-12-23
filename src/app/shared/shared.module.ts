@@ -6,17 +6,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ContainerComponent } from './container/container.component';
+import { ListComponent } from './list/list.component';
+import { BaseComponent } from './base/base.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export const componets = [ContainerComponent]
-
+export const componets = [
+  ContainerComponent,
+  ListComponent,
+  BaseComponent,
+];
 
 @NgModule({
   declarations: [
-    ...componets,
+    ...componets
   ],
   imports: [
     CommonModule,

@@ -17,8 +17,8 @@ export class AppComponent {
   constructor(private readonly translateService: TranslateService,
     private readonly router: Router) {
     this.menuItems = [];
-    this.menuItems.push({ title: "APP.SIDEBAR.HOME", url: "", icon: "" });
-    this.menuItems.push({ title: "APP.SIDEBAR.ABOUT", url: "", icon: "" });
+    this.menuItems.push({ title: "APP.SIDEBAR.HOME", url: "home", icon: "" });
+    this.menuItems.push({ title: "APP.SIDEBAR.ABOUT", url: "about", icon: "" });
   }
 
   setLang(lang: string) {
