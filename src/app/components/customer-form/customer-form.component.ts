@@ -18,6 +18,7 @@ export class CustomerFormComponent extends BaseComponent {
     { value: 3, title: 'Soccer', icon: 'sports_soccer' },
     { value: 4, title: 'Martial Arts', icon: 'sports_martial_arts' },
   ];
+  selectedCustomer$;
 
   constructor(fb: FormBuilder, private readonly customerStoreService: CustomerStoreService) {
     super();
@@ -25,7 +26,8 @@ export class CustomerFormComponent extends BaseComponent {
       name: ['', [Validators.required, Validators.minLength(3)]],
       birthDate: ['', [Validators.required, this.oldEnough(18)]]
     });
-    customerStoreService.selectedCustomer$.pipe(takeUntil(this.destroy$))
+    this.selectedCustomer$ = customerStoreService.selectedCustomer$;
+    this.selectedCustomer$.pipe(takeUntil(this.destroy$))
       .subscribe(customerName => {
         if (customerName) {
           this.title = 'edit ' + customerName;
@@ -48,6 +50,10 @@ export class CustomerFormComponent extends BaseComponent {
       }
       return null;
     };
+  }
+
+  remove() {
+    this.customerStoreService.setSelectedCustomer(undefined);
   }
 
   cancel() {

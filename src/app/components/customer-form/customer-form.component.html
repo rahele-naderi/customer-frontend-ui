@@ -22,5 +22,6 @@
 </div>
 <div class="action-buttons">
   <button mat-flat-button color="primary">Save</button>
+  <button mat-flat-button *ngIf="(selectedCustomer$ | async) !== null" color="accent" (click)="remove()">Delete</button>
   <button mat-flat-button (click)="cancel()">Cancel</button>
 </div>
