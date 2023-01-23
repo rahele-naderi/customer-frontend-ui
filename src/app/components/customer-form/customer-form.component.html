@@ -1,0 +1,13 @@
+<div class="form" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Birth Date</mat-label>
+        <input matInput formControlName="birthDate">
+        <mat-error *ngIf="form.get('birthDate')?.hasError('oldEnough')">
+            Age should be at least {{form.get('birthDate')?.getError('oldEnough')?.minAge}}
+        </mat-error>
+    </mat-form-field>
+</div>

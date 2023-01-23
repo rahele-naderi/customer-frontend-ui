@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 export const materialModules = [
     MatSidenavModule,
@@ -12,4 +14,6 @@ export const materialModules = [
     MatButtonModule,
     MatMenuModule,
     MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
 ];
