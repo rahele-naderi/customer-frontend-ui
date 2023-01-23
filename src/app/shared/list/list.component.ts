@@ -27,6 +27,10 @@ export class ListComponent<T = any> extends BaseComponent {
     return this.dataSource?.dataSubject;
   }
 
+  get loading$() {
+    return this.dataSource?.loadingSubject;
+  }
+
   constructor() {
     super();
   }

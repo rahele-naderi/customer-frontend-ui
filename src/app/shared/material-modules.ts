@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export const materialModules = [
     MatSidenavModule,
@@ -23,4 +24,5 @@ export const materialModules = [
     MatNativeDateModule,
     MatSelectModule,
     MatRippleModule,
+    MatProgressBarModule
 ];

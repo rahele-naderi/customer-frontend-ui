@@ -1,7 +1,7 @@
 import { Customer } from './../../models/customer.model';
 import { CustomerStoreService } from './../../services/customer-store.service';
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from 'src/app/services/customer.service';
+import { CustomerDataService } from 'src/app/services/customer-data.service';
 import { AsyncDataSource } from 'src/app/shared/list/data-source/data-source';
 
 @Component({
@@ -14,7 +14,7 @@ export class CustomerListComponent {
 
   selectedCustomer$;
 
-  constructor(private readonly customerService: CustomerService,
+  constructor(private readonly customerService: CustomerDataService,
     private customerStoreService: CustomerStoreService) {
       this.selectedCustomer$ = customerStoreService.selectedCustomer$;
   }

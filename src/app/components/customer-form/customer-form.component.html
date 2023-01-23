@@ -6,13 +6,13 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Birth Date</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput formControlName="birthDate" [matDatepicker]="picker">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Favorite sport</mat-label>
-      <mat-select>
+      <mat-select formControlName="sport">
         <mat-option *ngFor="let sport of sports" [value]="sport.value">
           <mat-icon>{{sport.icon}}</mat-icon>
           {{sport.title}}

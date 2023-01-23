@@ -1,4 +1,5 @@
 <div>
+  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
   <div matRipple class="list-item" *ngFor="let item of data$ | async" (click)="itemSelected(item)">
     {{item}}
   </div>
