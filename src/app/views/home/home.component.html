@@ -1,1 +1,4 @@
-<app-customer-form></app-customer-form>
+<div class="container">
+  <app-customer-list></app-customer-list>
+  <app-customer-form *ngIf="(selectedCustomer$ | async) !== undefined"></app-customer-form>
+</div>

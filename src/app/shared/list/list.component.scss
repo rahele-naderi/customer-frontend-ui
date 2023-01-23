@@ -1,0 +1,14 @@
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

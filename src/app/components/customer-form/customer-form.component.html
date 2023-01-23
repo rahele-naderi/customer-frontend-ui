@@ -1,13 +1,26 @@
+<h3>{{title}}</h3>
 <div class="form" [formGroup]="form">
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name">
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>Birth Date</mat-label>
-        <input matInput formControlName="birthDate">
-        <mat-error *ngIf="form.get('birthDate')?.hasError('oldEnough')">
-            Age should be at least {{form.get('birthDate')?.getError('oldEnough')?.minAge}}
-        </mat-error>
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Favorite sport</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let sport of sports" [value]="sport.value">
+          <mat-icon>{{sport.icon}}</mat-icon>
+          {{sport.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div class="action-buttons">
+  <button mat-flat-button color="primary">Save</button>
+  <button mat-flat-button (click)="cancel()">Cancel</button>
 </div>

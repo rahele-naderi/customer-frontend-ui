@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+}
+
+app-customer-list {
+  flex: 1;
+}
+
+app-customer-form {
+  flex: 1;
+  padding: 8px;
+}

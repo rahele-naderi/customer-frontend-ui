@@ -1,1 +1,6 @@
-<app-list [dataSource]="dataSource"></app-list>
+<div class="container">
+    <app-list [dataSource]="dataSource" (selected)="customerSelected($event)"></app-list>
+    <button *ngIf="(selectedCustomer$ | async) === undefined" mat-fab color="primary" (click)="add()">
+      <mat-icon>add</mat-icon>
+    </button>
+</div>
